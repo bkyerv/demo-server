@@ -6,13 +6,14 @@ import { open } from "sqlite";
 const app = express();
 app.use(cors());
 app.use(express.json());
+app.use(express.static("public"));
 
 const dbPromise = open({
   filename: "./data/db.sqlite",
   driver: sqlite3.Database,
 });
 
-app.get("/", async (req, res) => {
+app.get("/users", async (req, res) => {
   const db = await dbPromise;
   const result = await db.all("select * from users");
   res.json(result);
@@ -28,7 +29,8 @@ app.post("/user", async (req, res) => {
   `,
     [username, email]
   );
-  res.status(201).json(result);
+
+  res.status(201).redirect("/users");
 });
 
 app.listen(2828, () => console.log("server is runnning"));

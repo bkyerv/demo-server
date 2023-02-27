@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>User</title>
+    <link rel="stylesheet" href="/build/styles.css" />
+    <script src="main.js" defer></script>
+  </head>
+  <body>
+    <div class="h-screen max-w-sm mx-auto px-4 pt-24">
+      <form>
+        <div class="grid grid-cols-2">
+          <label for="username" class="text-sm font-light text-slate-400"
+            >Username:</label
+          >
+          <input
+            type="text"
+            placeholder="Serik"
+            name="username"
+            id="userame"
+            required
+            class="px-2 border"
+          />
+        </div>
+        <div class="grid grid-cols-2">
+          <label for="email" class="text-sm font-light text-slate-400"
+            >Email:</label
+          >
+          <input
+            type="text"
+            placeholder="s@gmail.com"
+            name="email"
+            id="email"
+            required
+            class="px-2 border"
+          />
+        </div>
+        <div class="h-2"></div>
+        <button
+          type="submit"
+          class="bg-blue-500 text-blue-50 px-2 py-1 rounded-md shadow-sm"
+        >
+          Submit
+        </button>
+      </form>
+      <div>
+        <h2 class="text-center pt-8 font-bold">List of users</h2>
+        <div id="users-list" class="list-none font-light"></div>
+      </div>
+    </div>
+  </body>
+</html>
